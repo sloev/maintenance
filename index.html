@@ -1,3 +1,256 @@
-under maintenance, check back again latest 1. may
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKIFTING // FORÅRSRENGØRING</title>
+    <style>
+        :root {
+            --fire: #ff4d00;
+            --water: #00d4ff;
+            --dark: #0a0a0a;
+            --light: #f0f0f0;
+        }
 
-new domain: skifting.net
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: none;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: hidden;
+            line-height: 1.2;
+        }
+
+        /* Animated Background - Fire and Water */
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #700000, #001122, #b34700, #003344);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Custom Cursor */
+        #cursor {
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            mix-blend-mode: difference;
+            z-index: 9999;
+            transition: transform 0.1s;
+        }
+
+        /* Layout */
+        main {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Typography & Animations */
+        h1 {
+            font-size: clamp(3rem, 15vw, 10rem);
+            text-transform: uppercase;
+            font-style: italic;
+            margin-bottom: 2rem;
+            line-height: 0.8;
+            animation: whisper 5s infinite alternate;
+        }
+
+        .glitch {
+            position: relative;
+            color: white;
+        }
+
+        .glitch::before, .glitch::after {
+            content: "SKIFTING";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        .glitch::before {
+            left: 2px; text-shadow: -2px 0 var(--fire);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            left: -2px; text-shadow: -2px 0 var(--water);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(10px, 9999px, 20px, 0); }
+            20% { clip: rect(80px, 9999px, 90px, 0); }
+            40% { clip: rect(30px, 9999px, 40px, 0); }
+            100% { clip: rect(10px, 9999px, 20px, 0); }
+        }
+
+        .content-box {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            transform: skewX(-2deg);
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .da { font-weight: bold; color: var(--light); }
+        .en { font-size: 1rem; color: #888; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* Links */
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        a {
+            color: var(--light);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid var(--light);
+            transition: all 0.3s;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        a:hover {
+            background: var(--light);
+            color: var(--dark);
+            transform: scale(1.1) rotate(2deg);
+        }
+
+        .radio-link:hover { box-shadow: 0 0 20px var(--water); border-color: var(--water); }
+        .tel-link:hover { box-shadow: 0 0 20px var(--fire); border-color: var(--fire); }
+
+        /* Whispering Text */
+        @keyframes whisper {
+            0% { opacity: 0.2; filter: blur(5px); }
+            100% { opacity: 1; filter: blur(0px); }
+        }
+
+        /* Fast/Loud Flash */
+        .flash {
+            animation: loud-flash 0.5s steps(2) infinite;
+            display: inline-block;
+            color: var(--fire);
+        }
+
+        @keyframes loud-flash {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0; transform: scale(1.1); }
+        }
+
+        footer {
+            margin-top: 5rem;
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .content-box { padding: 1.5rem; }
+            h1 { font-size: 4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cursor"></div>
+    <div class="bg-gradient"></div>
+
+    <main>
+        <h1 class="glitch">SKIFTING</h1>
+        
+        <div class="content-box">
+            <p class="da">
+                Vi er ved at lave lidt <span class="flash">FORÅRSRENGØRING</span>. 
+                Vi flytter radioen fra buro.earth til <br>
+                <span style="color: var(--water);">radio.skifting.net</span>
+            </p>
+            <p class="en">
+                Spring cleaning in progress. Moving the signal from buro.earth to radio.skifting.net
+            </p>
+
+            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #444;">
+
+            <p class="da">
+                Et nyt teleselskab opstår på <br>
+                <span style="color: var(--fire);">samtel.skifting.net</span> <br>
+                Gratis fastnet infranet telefoni.
+            </p>
+            <p class="en">
+                A new telco emerges. Free landline infranet telephony.
+            </p>
+
+            <p class="da" style="margin-top: 2rem; font-style: italic;">
+                "Der arbejdes intenst i skyggerne på at bringe en forbedret radio/tv/telefoni tilbage inden <span class="flash">1. MAJ</span>"
+            </p>
+            <p class="en" style="font-size: 0.8rem;">
+                Intense work in the shadows. Improved radio/tv/telephony returns before May 1st.
+            </p>
+
+            <div class="links">
+                <a href="https://radio.skifting.net" class="radio-link">LISTEN TO RADIO</a>
+                <a href="https://samtel.skifting.net" class="tel-link">SAMTEL INFRANET</a>
+                <a href="mailto:fremmedartet@gmail.com" style="border-style: dotted;">CONTACT / KONTAKT</a>
+            </div>
+        </div>
+
+        <footer>
+            EST. 2026 // SKIFTING.NET // BURO.EARTH -> DESTINY
+        </footer>
+    </main>
+
+    <script>
+        // Smooth custom cursor
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Add some random "glitch" jumps to the cursor on click
+        document.addEventListener('mousedown', () => {
+            cursor.style.transform = 'scale(4)';
+        });
+        document.addEventListener('mouseup', () => {
+            cursor.style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+</html>
